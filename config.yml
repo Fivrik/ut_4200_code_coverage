@@ -38,4 +38,5 @@ workflows:
     - build:
         filters:
           branches:
-            only: ut_4200_code_coverage
+            only:
+              - ut_4200_code_coverage
