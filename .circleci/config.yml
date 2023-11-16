@@ -53,11 +53,19 @@ jobs:
       - run:
           name: Verify the file path
           command: ls -l /home/circleci/ut_4200_code_coverage/package.json
-
+      - run:
+          name: Print current working directory
+          command: pwd
+      - run:
+          name: List contents of the directory
+          command: ls -la /home/circleci/ut_4200_code_coverage
+      - run:
+          name: Check file permissions
+          command: ls -l /home/circleci/ut_4200_code_coverage/package.json
       - run:
           name: Install dependencies
-          command: npm ci
-          
+          command: npm ci --prefix /home/circleci/ut_4200_code_coverage
+
       - run:
           name: Run tests
           command: npm test
