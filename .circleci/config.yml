@@ -14,7 +14,6 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
-
       - checkout
       - run:
           name: Change directory
@@ -26,7 +25,7 @@ jobs:
           name: If the file exists but is not being found, check its permissions
           command: ls -l /home/circleci/ut_4200_code_coverage/package.json
           chmod +r /home/circleci/ut_4200_code_coverage/package.json
-      - restore_cach:
+      - restore_cache:
           keys:
              - v1-dependencies-{{ checksum "package.json" }}
       - run:
