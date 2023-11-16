@@ -42,6 +42,19 @@ jobs:
           keys:
              - v1-dependencies-{{ checksum "package.json" }}
       - run:
+          name: List contents of the directory with detailed information
+          command: ls -la /home/circleci/ut_4200_code_coverage
+      - run:
+          name: Print npm debug logs
+          command: cat /home/circleci/.npm/_logs/2023-11-16T16_23_59_504Z-debug.log
+      - run:
+          name: Check directory permissions
+          command: ls -l /home/circleci/ut_4200_code_coverage
+      - run:
+          name: Verify the file path
+          command: ls -l /home/circleci/ut_4200_code_coverage/package.json
+
+      - run:
           name: Install dependencies
           command: npm ci
           
