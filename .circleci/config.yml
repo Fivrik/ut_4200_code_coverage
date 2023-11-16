@@ -19,6 +19,13 @@ jobs:
       - run:
           name: Change directory
           command: cd /home/circleci/ut_4200_code_coverage
+      - run:
+          name: Check if the "package.json" file exists in the correct location
+          command: ls /home/circleci/ut_4200_code_coverage/package.json
+      - run:
+          name: If the file exists but is not being found, check its permissions
+          command: ls -l /home/circleci/ut_4200_code_coverage/package.json
+          chmod +r /home/circleci/ut_4200_code_coverage/package.json
       - restore_cach:
           keys:
              - v1-dependencies-{{ checksum "package.json" }}
