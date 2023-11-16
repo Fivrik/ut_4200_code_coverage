@@ -15,9 +15,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Change directory
-          command: cd /home/circleci/ut_4200_code_coverage
-      - run:
           name: Print current working directory
           command: pwd
       - run:
