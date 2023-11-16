@@ -5,10 +5,6 @@ jobs:
     docker:
       - image: circleci/node:latest
 
-    # Docker image cache configuration
-    caches:
-      - docker-image:/home/circleci/node:latest
-
     steps:
       - checkout
       - restore_cache:
