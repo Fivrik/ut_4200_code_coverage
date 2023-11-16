@@ -37,7 +37,9 @@ jobs:
       - run:
           name: If the file exists but is not being found, check its permissions
           command: ls -l /home/circleci/ut_4200_code_coverage/package.json
-          chmod +r /home/circleci/ut_4200_code_coverage/package.json
+      - run:
+          name: Change file permissions if needed
+          command: chmod +r /home/circleci/ut_4200_code_coverage/package.json
       - restore_cache:
           keys:
              - v1-dependencies-{{ checksum "package.json" }}
