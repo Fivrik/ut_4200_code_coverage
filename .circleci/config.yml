@@ -21,6 +21,15 @@ jobs:
       - run:
           name: Print current working directory
           command: pwd
+      - run:
+          name: List contents of the directory
+          command: ls -l /home/circleci/ut_4200_code_coverage
+      - run:
+          name: List contents of the directory with package.json
+          command: ls -la /home/circleci/ut_4200_code_coverage
+      - run:
+          name: Print npm debug logs
+          command: cat /home/circleci/.npm/_logs/2023-11-16T16_17_26_353Z-debug.log
 
       - run:
           name: Check if the "package.json" file exists in the correct location
