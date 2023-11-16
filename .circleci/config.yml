@@ -30,7 +30,6 @@ jobs:
       - run:
           name: Print npm debug logs
           command: cat /home/circleci/.npm/_logs/2023-11-16T16_17_26_353Z-debug.log
-
       - run:
           name: Check if the "package.json" file exists in the correct location
           command: ls /home/circleci/ut_4200_code_coverage/package.json
