@@ -19,22 +19,22 @@ jobs:
           command: pwd
       - run:
           name: List contents of the directory
-          command: ls -l circleci/ut_4200_code_coverage
+          command: ls -l ~/circleci/ut_4200_code_coverage
       - run:
           name: List contents of the directory with package.json
-          command: ls -la /home/circleci/ut_4200_code_coverage
+          command: ls -la ~/circleci/ut_4200_code_coverage
       - run:
           name: Print npm debug logs
-          command: cat circleci/.npm/_logs/2023-11-16T16_17_26_353Z-debug.log
+          command: cat ~/circleci/.npm/_logs/2023-11-16T16_17_26_353Z-debug.log
       - run:
           name: Check if the "package.json" file exists in the correct location
-          command: ls circleci/ut_4200_code_coverage/package.json
+          command: ls ~/circleci/ut_4200_code_coverage/package.json
       - run:
           name: If the file exists but is not being found, check its permissions
-          command: ls -l circleci/ut_4200_code_coverage/package.json
+          command: ls -l ~/circleci/ut_4200_code_coverage/package.json
       - run:
           name: Change file permissions if needed
-          command: chmod +r circleci/ut_4200_code_coverage/package.json
+          command: chmod +r ~/circleci/ut_4200_code_coverage/package.json
       - restore_cache:
           keys:
              - v1-dependencies-{{ checksum "package.json" }}
@@ -43,13 +43,13 @@ jobs:
           command: ls -la /home/circleci/ut_4200_code_coverage
       - run:
           name: Print npm debug logs
-          command: cat /home/circleci/.npm/_logs/2023-11-16T16_23_59_504Z-debug.log
+          command: cat ~//circleci/.npm/_logs/2023-11-16T16_23_59_504Z-debug.log
       - run:
           name: Check directory permissions
           command: ls -l circleci/ut_4200_code_coverage
       - run:
           name: Verify the file path
-          command: ls -l circleci/ut_4200_code_coverage/package.json
+          command: ls -l ~/circleci/ut_4200_code_coverage/package.json
       - run:
           name: Print current working directory
           command: pwd
@@ -58,10 +58,10 @@ jobs:
           command: ls -la /home/circleci/ut_4200_code_coverage
       - run:
           name: Check file permissions
-          command: ls -l circleci/ut_4200_code_coverage/package.json
+          command: ls -l ~/circleci/ut_4200_code_coverage/package.json
       - run:
           name: Install dependencies
-          command: npm ci --prefix circleci/ut_4200_code_coverage
+          command: npm ci --prefix ~/circleci/ut_4200_code_coverage
 
       - run:
           name: Run tests
