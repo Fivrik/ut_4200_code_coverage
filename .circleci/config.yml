@@ -19,6 +19,10 @@ jobs:
           name: Change directory
           command: cd /home/circleci/ut_4200_code_coverage
       - run:
+          name: Print current working directory
+          command: pwd
+
+      - run:
           name: Check if the "package.json" file exists in the correct location
           command: ls /home/circleci/ut_4200_code_coverage/package.json
       - run:
@@ -30,7 +34,7 @@ jobs:
              - v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Install dependencies
-          command: npm install
+          command: npm ci
           
       - run:
           name: Run tests
