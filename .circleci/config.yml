@@ -16,7 +16,9 @@ jobs:
     steps:
 
       - checkout
-
+      - run:
+          name: Change directory
+          command: cd /home/circleci/ut_4200_code_coverage
       - restore_cach:
           keys:
              - v1-dependencies-{{ checksum "package.json" }}
