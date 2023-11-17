@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  slack: circleci/slack@4.1.4
+  slack: circleci/slack@4.2
 
 jobs:
   notify:
@@ -25,7 +25,6 @@ jobs:
                 }
               ]
             }
-          event: always
   build:
     docker:
       - image: circleci/node:latest
@@ -78,8 +77,6 @@ workflows:
   build_and_notify:
     jobs:
       - build
-
-      - slack/notify:
-          event: fail
-          template: basic_fail_1
-          mentions: "fivrik"
+      - notify:
+          requires:
+            - build
