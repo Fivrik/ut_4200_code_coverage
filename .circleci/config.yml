@@ -14,9 +14,6 @@ jobs:
           name: List contents of the directory with detailed information
           command: ls -la /home/circleci/project
       - run:
-          name: Print npm debug logs
-          command: cat .npm/_logs/2023-11-16T16_23_59_504Z-debug.log
-      - run:
           name: Check directory permissions
           command: ls -l /home/circleci/project
       - run:
